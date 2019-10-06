@@ -2,12 +2,12 @@ var https = require('https');
 var querystring = require('querystring');
 var KavenegarApi = function(options) {
 	this.options = {};
-	this.options.host = 'api.kavenegar.com';
+	this.options.host = 'api.ghasedak.io';
 	this.options.version = 'v1';
 	this.options.apikey = options.apikey;
 };
 KavenegarApi.prototype.request = function(action, method, params, callback) {
-	var path = '/' + this.options.version + '/' + this.options.apikey + '/' + action + '/' + method + '.json';
+	var path = '/kavenegar/' + this.options.version + '/' + this.options.apikey + '/' + action + '/' + method + '.json';
 	var postdata = querystring.stringify(params);
 	var post_options = {
 		host: this.options.host,
